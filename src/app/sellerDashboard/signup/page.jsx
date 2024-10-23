@@ -2,7 +2,7 @@
 import { useState } from "react";
 import axios from 'axios';
 import Link from "next/link";
-import '../styles/home.css';
+import '../../styles/home.css';
 
 
 export default function Page() {
@@ -31,7 +31,7 @@ export default function Page() {
         "document": document
       };
 
-      const res = await axios.post('http://localhost:8000/api/seller/signup', postdata, {
+      const res = await axios.post('http://localhost:5002/api/sell/seller/signup', postdata, {
         headers: {
           'Content-Type': 'multipart/form-data'
         },

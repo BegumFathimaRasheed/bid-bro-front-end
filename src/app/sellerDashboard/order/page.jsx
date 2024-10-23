@@ -6,10 +6,10 @@ import Link from "next/link";
 import Image from "next/image";
 import sold from '../images/sold.png';
 import { FaRegCalendarAlt } from "react-icons/fa";
-import '../styles/home.css';
-import Sidebar from "../components/Sidebar";
-import Navbar from "../components/Navbar";
-import Loading from "../components/Loading";
+import '../../styles/home.css';
+import Sidebar from "../../components/Sidebar";
+import Navbar from "../../components/Navbar";
+import Loading from "../../components/Loading";
 
 
 export default function Page() {
@@ -22,7 +22,7 @@ export default function Page() {
     const fetchData = async () => {
       try {
 
-        const res = await axios.get('http://localhost:8000/api/seller/getOrder');
+        const res = await axios.get('http://localhost:5002/api/sell/seller/getOrder');
         const resdata = await res.data;
         setFetchArray(resdata);
         setLoading(false);

@@ -5,10 +5,10 @@ import axios from 'axios';
 import Link from "next/link";
 import Image from "next/image";
 import { FaRegCalendarAlt } from "react-icons/fa";
-import '../styles/home.css';
-import Sidebar from "../components/Sidebar";
-import Navbar from "../components/Navbar";
-import Loading from "../components/Loading";
+import '../../styles/home.css';
+import Sidebar from "../../components/Sidebar";
+import Navbar from "../../components/Navbar";
+import Loading from "../../components/Loading";
 import { IoIosCloseCircle } from "react-icons/io";
 
 
@@ -37,7 +37,7 @@ export default function Home() {
     const fetchData = async () => {
       try {
 
-        const res = await axios.get('http://localhost:8000/api/seller/getBid');
+        const res = await axios.get('http://localhost:5002/api/sell/seller/getBid');
         const resdata = await res.data;
         setFetchArray(resdata);
         setLoading(false);
@@ -100,7 +100,7 @@ export default function Home() {
             "note": note,
         };
 
-        const res = await axios.post('http://localhost:8000/api/seller/postrespond', postdata, {
+        const res = await axios.post('http://localhost:5002/api/sell/seller/postrespond', postdata, {
             headers: {
                 'Content-Type': 'application/json'
             },
